@@ -1,0 +1,215 @@
+body {
+  background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f18eec73-a0af-43fe-a42a-9cce3f729e08/ddpvmlj-e8f6414c-5133-42bf-a713-db075029df20.png/v1/fill/w_400,h_225,q_80,strp/battlebgroute_by_aveontrainer_ddpvmlj-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjI1IiwicGF0aCI6IlwvZlwvZjE4ZWVjNzMtYTBhZi00M2ZlLWE0MmEtOWNjZTNmNzI5ZTA4XC9kZHB2bWxqLWU4ZjY0MTRjLTUxMzMtNDJiZi1hNzEzLWRiMDc1MDI5ZGYyMC5wbmciLCJ3aWR0aCI6Ijw9NDAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.q3QK6V-gVEz13QwGro2Wm1xclQweqWgMX27ywimSwwQ")
+    no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* TÍTULO DEL JUEGO */
+h1 {
+  color: #ffcc00;
+  text-shadow: 2px -7px 0px #000;
+  font-size: 50px;
+  font-family: "Press Start 2P", cursive;
+}
+
+/* SUBTÍTULO PARA SELECCIONAR LA MASCOTA */
+h2 {
+  color: #00ccff;
+  text-shadow: 2px -5px 0px #000;
+  margin-top: 10px;
+  font-size: 30px;
+  font-family: "Press Start 2P", cursive;
+}
+
+.contenedor-mascotas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* OCULTAR LOS RADIOS DE LOS INPUTS */
+.mascota-card input[type="radio"] {
+  display: none;
+}
+
+/* CARD DE LAS MASCOTAS */
+.card {
+  display: inline-block;
+  width: 160px;
+  padding: 15px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 11px 1px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+/* Imagen */
+.card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* CUANDO SE SELECCIONA LA MASCOTA LA CARD SE SOMBREARÁ DE AZUL A SU ALREDEDOR */
+.mascota-card input[type="radio"]:checked + .card {
+  border: 3px solid #2196f3;
+  box-shadow: 0px 0px 15px rgba(33, 150, 243, 0.8);
+  transform: scale(1.05);
+}
+
+/* ESTILOS PARA EL BOTÓN DE SELECCIONAR MASCOTA */
+#selectMascot {
+  border-radius: 17px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid;
+  margin-bottom: 10px;
+}
+
+/* ESTILO DE LOS BOTONES EN GENERAL */
+button {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* BOTÓN CON EL QUE SELECCIONAMOS LA MASCOTA */
+button.mascota-selecciona {
+  margin-top: -18px;
+}
+
+/* EFECTOS HOVER PARA CADA UNO DE LOS BOTONES CON LOS QUE SELECCIONAMOS LOS ATAQUES DE LAS MASCOTAS */
+
+/* EFECTO HOVER PARA EL BOTÓN DE FUEGO */
+button.fuego:hover {
+  background-color: #ff4444;
+  color: #fff;
+}
+
+/* EFECTO HOVER PARA EL BOTÓN DE AGUA */
+button.agua:hover {
+  background-color: #00ccff;
+  color: #fff;
+}
+
+/* EFECTO HOVER PARA EL BOTÓN DE TIERRA */
+button.tierra:hover {
+  background-color: #22cc55;
+  color: #fff;
+}
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* ESTILOS PARA LOS PÁRRAFOS */
+p {
+  font-size: 17px;
+}
+
+/* TAMAÑO DE FUENTE PARA LOS MENSAJES */
+p.mensajess {
+  font-size: 22px;
+}
+
+/* NEGRILLA PARA LOS ELEMENTOS CON ESTOS ID's */
+#mascotaJugador,
+#mascotaEnemigo,
+#spanOurAttack,
+#spanEnemyAttack,
+#playerLives,
+#enemyLives {
+  font-weight: bold;
+}
+
+/* ESTILOS PARA LOS BOTONES DE LOS ATAQUES DE LAS MASCOTAS */
+#botonFuego,
+#botonAgua,
+#botonTierra {
+  border-radius: 17px;
+  padding: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid;
+}
+
+/* AQUI EMPIEZA PRÁCTICAMENTE LA SECCIÓN DE LOS ATAQUES */
+
+/* DIV QUE CONTIENE LAS CARDS DE LAS MASCOTAS SELECCIONADAS */
+.campo-batalla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+/* CLASE DE LOS DIVS DE LAS CARDS (JUGADOR Y ENEMIGO) */
+.tarjeta {
+  border-radius: 10px;
+  padding: 15px;
+  width: 200px;
+  margin: 0 20px;
+  background: rgb(255, 255, 255);
+}
+
+/* COMO SU NOMBRE LO INDICA, LA IMAGEN DE LA CARD DE LAS MASCOTAS */
+.imagen-mascota {
+  width: 100px;
+  height: 100px;
+}
+
+/* VIDAS REPRESENTADAS EN CORAZONES */
+.vidas {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* NADA QUE DECIR */
+.vs {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0 20px;
+  font-family: "Press Start 2P", cursive;
+  color: #ffcc00;
+  text-shadow: 8px 0px 2px black;
+}
+
+/* ESTILO PARA EL HISTORIAL EN DONDE SE MUESTRAN LOS ATAQUES */
+.historial {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 510px;
+  height: 217px;
+  margin: 0 auto;
+  padding: 10px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 12px;
+}
+
+/* ESTILO PARA EL BOTÓN DE REINICIAR JUEGO */
+#reiniciarJuego {
+  border-radius: 17px;
+  padding: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid;
+}
+

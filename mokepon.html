@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOKEPON</title>
+    <link rel="stylesheet" href="estilosMokepon.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body onload="iniciarJuego()">
+    <h1>MOKEPON 🔥💦🌱</h1>
+
+    <!-- SECCIÓN SELECCIONAR MASCOTA -->
+    <section id="seleccionarMascota">
+      <h2>Elige tu mascota:</h2>
+
+      <!-- HIPODOGE -->
+      <div class="contenedor-mascotas">
+        <div class="mascota-card">
+          <input type="radio" id="hipodoge" name="mascota" />
+          <label for="hipodoge" class="card">
+            <img
+              src="https://mokepon.jpxoi.com/assets/img/webp/mokepon_hipodoge.webp"
+              alt="Hipodoge"
+            />
+            <h3>Hipodoge</h3>
+            <p>Agua💦</p>
+          </label>
+        </div>
+
+        <!-- CAPIPEPO -->
+        <div class="mascota-card">
+          <input type="radio" id="capipepo" name="mascota" />
+          <label for="capipepo" class="card">
+            <img src="mokepons_mokepon_capipepo_attack.png" alt="capipepo" />
+            <h3>Capipepo</h3>
+            <p>Tierra🌱</p>
+          </label>
+        </div>
+
+        <!-- RATIGUEYA -->
+        <div class="mascota-card">
+          <input type="radio" id="ratigueya" name="mascota" />
+          <label for="ratigueya" class="card">
+            <img src="mokepons_mokepon_ratigueya_attack.webp" alt="Ratigueya" />
+            <h3>Ratigueya</h3>
+            <p>Fuego🔥</p>
+          </label>
+        </div>
+
+        <!-- LANGOSTELVIS -->
+        <div class="mascota-card">
+          <input type="radio" id="langostelvis" name="mascota" />
+          <label for="langostelvis" class="card">
+            <img
+              src="mokepons_mokepon_langostelvis_attack.png"
+              alt="Langostelvis"
+            />
+            <h3>Langostelvis</h3>
+            <p>Agua💦 y Fuego🔥</p>
+          </label>
+        </div>
+
+        <!-- TUCAPALMA -->
+        <div class="mascota-card">
+          <input type="radio" id="tucapalma" name="mascota" />
+          <label for="tucapalma" class="card">
+            <img src="200px-Trumbeak.png" alt="Tucapalma" />
+            <h3>Tucapalma</h3>
+            <p>Agua💦 y Tierra🌱</p>
+          </label>
+        </div>
+
+        <!-- PYDOS -->
+        <div class="mascota-card">
+          <input type="radio" id="pydos" name="mascota" />
+          <label for="pydos" class="card">
+            <img src="145.png" alt="Pydos" />
+            <h3>Pydos</h3>
+            <p>Tierra🌱 y Fuego🔥</p>
+          </label>
+        </div>
+      </div>
+      <button id="selectMascot" class="mascota-selecciona">Seleccionar</button>
+    </section>
+
+    <!-- -------------------------------------------------------------------------------------------------- -->
+
+    <!-- SECCIÓN SELECCIONAR ATAQUE -->
+    <section id="seleccionarAtaque" style="display: none">
+      <h2>Elige tu ataque:</h2>
+
+      <!-- BOTONES PARA SELECCIONAR LOS ATAQUES -->
+      <div>
+        <button id="botonFuego" class="fuego">Fuego🔥</button>
+        <button id="botonAgua" class="agua">Agua💦</button>
+        <button id="botonTierra" class="tierra">Tierra🌱</button>
+      </div>
+
+      <!-- COMBATE DE LAS MASCOTAS -->
+      <div class="campo-batalla">
+        <!-- 🟩 CARD DE LA MASCOTA SELECCIONADA POR EL JUGADOR -->
+        <div class="tarjeta">
+          <div class="vidas" id="vidas-jugador">❤️ ❤️ ❤️</div>
+          <img
+            id="imgMascotaJugador"
+            src=""
+            alt="Mascota jugador"
+            class="imagen-mascota"
+          />
+          <h3 id="nombreMascota-jugador"></h3>
+          <p>Poder(es): <span id="poderMascotaJugador"></span></p>
+        </div>
+
+        <span class="vs">VS</span>
+
+        <!-- 🟥 CARD DE LA MASCOTA SELECCIONADA POR EL ENEMIGO -->
+        <div class="tarjeta">
+          <div class="vidas" id="vidas-enemigo">❤️ ❤️ ❤️</div>
+          <img
+            id="imgMascotaEnemigo"
+            src=""
+            alt="Mascota enemigo"
+            class="imagen-mascota"
+          />
+          <h3 id="nombre-MascotaEnemigo"></h3>
+          <p>Poder(es): <span id="poderMascotaEnemigo"></span></p>
+        </div>
+      </div>
+
+      <!-- 📜 HISTORIAL DE ATAQUES -->
+      <h2>Historial de ataques:</h2>
+      <div id="historial" class="historial"></div>
+
+      <!-- ------------------------------------------------------------------------------------------------------- -->
+
+      <p class="mensajess">
+        Tu mascota <span id="mascotaJugador"></span> tiene
+        <span id="playerLives"> 3</span>
+        vidas
+      </p>
+
+      <p class="mensajess">
+        La mascota <span id="mascotaEnemigo"></span> del enemigo tiene
+        <span id="enemyLives"> 3</span>
+        vidas
+      </p>
+    </section>
+
+    <div id="messages" style="display: none">
+      <p class="mensajess">
+        Tu mascota atacó con <span id="spanOurAttack"></span>, y la mascota del
+        enemigo atacó con <span id="spanEnemyAttack"></span> -
+        <span id="messageFinalCombat"></span>
+      </p>
+    </div>
+
+    <!-- BOTÓN PARA REINICIAR EL JUEGO -->
+    <div id="restart">
+      <button onclick="reiniciarJuego()" id="reiniciarJuego">
+        Reiniciar Juego
+      </button>
+    </div>
+
+    <script src="funcionamientoMokepon.js"></script>
+  </body>
+</html>
